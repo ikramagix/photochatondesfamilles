@@ -1,24 +1,16 @@
-# README
+# Maquette Figma de la boutique de chatons
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Voici la maquette Figma de notre projet Photochaton, merci à Grégory Magnat et la team Arabicode!
 
-Things you may want to cover:
+## Aperçu de la maquette 
 
-* Ruby version
+![Hompage](app/assets/images/cat1.png)
+![Log in](app/assets/images/cat2.png)
+![Sign up](app/assets/images/cat3.png)
+![Products](app/assets/images/cat4.png)
+![Product Page](app/assets/images/cat5.png)
+![Basket](app/assets/images/cat6.png)
 
-* System dependencies
+## Lien pour la consulter 
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+https://www.figma.com/file/5b3b1PHcctALa14P38zHVg/Boutique-Chaton
