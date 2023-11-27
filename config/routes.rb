@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :order_items
+  resources :cart_items
+  resources :carts
+  resources :items
+  resources :orders
+  devise_for :users
+
+  root "items#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

@@ -1,0 +1,27 @@
+<%= form_with(model: cart) do |form| %>
+  <% if cart.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(cart.errors.count, "error") %> prohibited this cart from being saved:</h2>
+
+      <ul>
+        <% cart.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :total_price, style: "display: block" %>
+    <%= form.text_field :total_price %>
+  </div>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
