@@ -1,3 +1,21 @@
 <div class="d-flex justify-content-center align-items-center img-front">
   <%= image_tag("imgPlaceholder (1).png", class: "w-50") %>
 </div>
+
+<div class="row">
+  <% 3.times do %>
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <%= image_tag("imgPlaceholder (2).png", class: "card-img-top") %>
+        <div class="card-body">
+          <h5 class="card-title">Titre de l'article</h5>
+          <p class="card-text">Description de l'article</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <%= link_to 'Buy', '#', class: "btn btn-primary" %>
+            <div class="text-muted">€99.99</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
