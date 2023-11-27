@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <h1><a class="navbar-brand fs-1" href="#">PHOTOchaton</a></h1>
+    <div class="mx-auto order-0">
+      <%= image_tag("logo.png", class: "navbar-brand img-fluid navbar-logo") %>
+    </div>
+    <div class="d-flex">
+      <%= link_to root_path, class: "navbar-brand navbar-icon-link" do %>
+        <i class="fas fa-home navbar-icon"></i>
+      <% end %>
+      <%= link_to "#", class: "navbar-brand navbar-icon-link" do %>
+        <i class="fas fa-search navbar-icon"></i>
+      <% end %>
+      <%= link_to "#", class: "btn btn-warning navbar-button login" do %>
+        Log in
+      <% end %>
+      <%= link_to "#", class: "navbar-brand navbar-icon-link" do %>
+        <i class="fas fa-shopping-cart navbar-icon"></i>
+      <% end %>
+    </div>
+  </div>
+</nav>
