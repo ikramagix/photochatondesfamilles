@@ -20,13 +20,15 @@ users = []
 5.times do
   users << User.create(
     email: Faker::Internet.email,
-    password: "singes"
+    password: "singes",
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name
   )
 end
 
 
 items = []
-10.times do
+5.times do
   items << Item.create(
     name: Faker::Commerce.product_name,
     description: Faker::Lorem.paragraph,
@@ -45,16 +47,16 @@ end
 
 
 cart_items = []
-10.times do
-  cart_items << CartItem.create(
-    cart: carts.sample,
-    item: items.sample
-  )
+5.times do
+  cart = carts.sample
+  item = items.sample
+  cart_item = CartItem.find_or_initialize_by(cart: cart, item: item)
+  cart_item.cart_id = cart.id
+  cart_items << cart_item
 end
 
-
 orders = []
-3.times do
+5.times do
   orders << Order.create(
     total_price: Faker::Commerce.price,
     user: users.sample
@@ -62,7 +64,7 @@ orders = []
 end
 
 order_items = []
-15.times do
+5.times do
   order_items << OrderItem.create(
     order: orders.sample,
     item: items.sample
