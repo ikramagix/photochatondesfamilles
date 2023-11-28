@@ -3,7 +3,7 @@
 
 
  .navbar-logo {
-  width: 100px;
+  width: 100px ;
   margin-right: 10rem;
 };
 .page-title {
@@ -57,4 +57,7 @@
   margin-bottom: 8em;
   max-width: 300px;
   padding: 0 !important;
+}
+.admin {
+  margin-left: 2rem;
 }
