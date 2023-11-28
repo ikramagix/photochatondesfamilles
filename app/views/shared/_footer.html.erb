@@ -14,7 +14,7 @@
       <%= link_to "#", class: "social-link text-white text-decoration-none" do %>
         <i class="fab fa-linkedin"></i>
       <% end %>
-      <%= link_to "admin", class: "btn btn-primary ml-3 admin" %>
+      <%= link_to "admin", admin_root_path, class: "btn btn-primary ml-3 admin" if current_user&.admin? %>
     </div>
   </div>
 </footer>

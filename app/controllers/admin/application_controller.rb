@@ -9,7 +9,12 @@ module Admin
     before_action :authenticate_admin
 
     def authenticate_admin
-      # TODO Add authentication logic here.
+      redirect_to '/', alert: 'Not authorized.' unless current_user && access_whitelist
+    end
+    private
+
+    def access_whitelist
+      current_user.admin?
     end
 
     # Override this value to specify the number of elements to display at a time
