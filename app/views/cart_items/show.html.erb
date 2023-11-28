@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @cart_item %>
+
+<div>
+  <%= link_to "Edit this cart item", edit_cart_item_path(@cart_item) %> |
+  <%= link_to "Back to cart items", cart_items_path %>
+
+  <%= button_to "Destroy this cart item", @cart_item, method: :delete %>
+</div>
