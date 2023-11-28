@@ -1,10 +1,15 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @cart %>
-
-<div>
-  <%= link_to "Edit this cart", edit_cart_path(@cart) %> |
-  <%= link_to "Back to carts", carts_path %>
-
-  <%= button_to "Destroy this cart", @cart, method: :delete %>
+<div class="d-flex justify-content-center align-items-center vh-100">
+  <div class="text-center">
+    <% if @cart.items.empty? %>
+      <p>Votre panier est vide</p>
+      <div>
+        <%= link_to "Commencer mes achats", items_path, class: "btn btn-warning" %>
+      </div>
+    <% else %>
+      <%= render @cart %>
+      <div>
+        <%= button_to "Vider ce panier", @cart, method: :delete, class: "btn btn-warning" %>
+      </div>
+    <% end %>
+  </div>
 </div>
