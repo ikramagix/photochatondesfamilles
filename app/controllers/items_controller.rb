@@ -56,7 +56,12 @@ class ItemsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  def add_to_cart
+    # Code pour ajouter l'item au panier
+    # Par exemple, si vous avez un modèle Cart qui a une méthode add_item :
+    current_user.cart.add_item(@item)
+    redirect_to cart_path(current_user.cart)
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_item
