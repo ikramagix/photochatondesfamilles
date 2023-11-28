@@ -57,6 +57,13 @@ class CartsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  def add_to_cart
+    @item = Item.find(params[:id])
+    @cart = current_user.cart
+    @cart.cart_items.create(item: @item, quantity: params[:quantity])
+    redirect_to cart_path(@cart)
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

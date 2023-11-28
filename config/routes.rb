@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :items
   resources :orders
   devise_for :users
-
+  post '/add_to_cart/:id', to: 'carts#add_to_cart', as: 'add_to_cart'
   root "items#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :items do
