@@ -6,8 +6,11 @@
   width: 100px;
   margin-right: 10rem;
 };
+.page-title {
+  margin-left: 2rem;
+ };
 
-.navbar-icon {
+ .navbar-icon {
   max-width: 30px;
 };
 
@@ -40,10 +43,18 @@
   color: white;
   text-align: center;
   padding: 10px 0;
+  z-index: 1;
 }
 
 .social-link {
   margin-left: 10px;
   font-size: 1.2em;
   
+}
+.custom-card {
+  margin-top: 8em;
+  margin-left: 8em;
+  margin-bottom: 8em;
+  max-width: 300px;
+  padding: 0 !important;
 }
