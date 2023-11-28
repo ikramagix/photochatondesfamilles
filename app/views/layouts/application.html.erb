@@ -29,6 +29,16 @@
           <li>
               <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link" %>
           </li>
+          <li>
+          <button type="button">
+            <%= link_to "My Cart", cart_path(current_user.cart), class: "nav-link" if current_user.cart %>
+          </button>
+        </li>
+        <li>
+        <button type="button">
+          <%= link_to "My Orders", orders_path(user_id: current_user.id), class: "nav-link" %>
+        </button>
+      </li>
         <% else %>
           <li>
             <button type="button">
