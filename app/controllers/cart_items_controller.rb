@@ -1,5 +1,5 @@
 class CartItemsController < ApplicationController
-  #before_action :set_cart_item, only: %i[ show edit update destroy ]
+  before_action :set_cart_item, only: %i[ show edit update destroy ]
 
   # GET /cart_items or /cart_items.json
   def index
@@ -59,9 +59,9 @@ class CartItemsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    #def set_cart_item
-    #  @cart_item = CartItem.find(params[:id])
-    #end
+    def set_cart_item
+      @cart_item = CartItem.find(params[:id])
+    end
 
     # Only allow a list of trusted parameters through.
     def cart_item_params
