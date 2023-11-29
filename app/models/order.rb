@@ -4,6 +4,7 @@ class Order < ApplicationRecord
 
   before_destroy :destroy_associated_records
   after_create :clear_cart_after_order
+  after_create :confirmation_order_send
 
   private
 
@@ -27,4 +28,9 @@ class Order < ApplicationRecord
     cart&.cart_items&.clear
     cart&.update(total_price: nil)
   end
+
+  def confirmation_order_send
+    OrderConfirmationMailer.order_confirmation_mail(self).deliver_now
+  end
+  
 end
