@@ -27,6 +27,12 @@
       <div>
         <%= button_to "Vider ce panier", @cart, method: :delete, class: "btn btn-warning" %>
       </div>
+      <div class="button">
+      <%= button_to checkout_create_path(total: @cart.total_price), :class=>"btn btn-primary", data: {turbo: false} do %>
+        <i class="fa-solid fa-money-bill"></i>
+        Passer à la commande
+      <% end %>
+    </div>    
     <% end %>
   </div>
 </div>

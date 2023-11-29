@@ -13,7 +13,15 @@ Rails.application.routes.draw do
   resources :cart_items
   resources :carts
   resources :items
-  resources :orders
+  resources :orders 
+
+  scope '/checkout' do
+    post 'create', to: 'checkout#create', as: 'checkout_create'
+    get 'success', to: 'checkout#success', as: 'checkout_success'
+    get 'cancel', to: 'checkout#cancel', as: 'checkout_cancel'
+end
+
+  #Adding to cart and devise
   devise_for :users
   post '/add_to_cart/:id', to: 'carts#add_to_cart', as: 'add_to_cart'
   root "items#index"
