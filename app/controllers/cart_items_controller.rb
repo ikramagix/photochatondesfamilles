@@ -22,18 +22,19 @@ class CartItemsController < ApplicationController
   # POST /cart_items or /cart_items.json
   def create
     @cart_item = CartItem.new(cart_item_params)
-
+    @cart_item.item = Item.find(params[:item_id])
+    @cart_item.cart = current_user.cart # ou une autre méthode pour obtenir le panier de l'utilisateur
+  
     respond_to do |format|
       if @cart_item.save
-        format.html { redirect_to cart_item_url(@cart_item), notice: "Cart item was successfully created." }
+        format.html { redirect_to cart_items_url, notice: 'Item was successfully added to cart.' }
         format.json { render :show, status: :created, location: @cart_item }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render :new }
         format.json { render json: @cart_item.errors, status: :unprocessable_entity }
       end
     end
   end
-
   # PATCH/PUT /cart_items/1 or /cart_items/1.json
   def update
     respond_to do |format|
@@ -65,6 +66,6 @@ class CartItemsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def cart_item_params
-      params.require(:cart_item).permit(:cart_id, :item_id)
+      params.require(:cart_item).permit(:quantity, :item_id)
     end
 end

@@ -1,10 +1,29 @@
-<p style="color: green"><%= notice %></p>
 
-<%= render @item %>
+<div class="d-flex flex-column justify-content-center align-items-center vh-100">
+  <div class="text-center">
+    <p>
+      <strong>Name:</strong>
+      <%= @item.name %>
+    </p>
 
-<div>
-  <%= link_to "Edit this item", edit_item_path(@item) %> |
-  <%= link_to "Back to items", items_path %>
+    <p>
+      <strong>Description:</strong>
+      <%= @item.description %>
+    </p>
 
-  <%= button_to "Destroy this item", @item, method: :delete %>
+    <p>
+      <strong>Price:</strong>
+      <%= @item.price %>
+    </p>
+
+    <p>
+      <strong>Image:</strong>
+      <%= image_tag @item.image_url if @item.image_url.present? %>
+    </p>
+
+    <%= form_with url: add_to_cart_path(@item), method: :post do |form| %>
+      <%= form.number_field :quantity, value: 1, min: 1, class: "form-control" %>
+      <%= form.submit "Ajouter au panier", class: "btn btn-warning mt-3" %>
+    <% end %>
+  </div>
 </div>

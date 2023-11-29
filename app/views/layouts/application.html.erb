@@ -7,54 +7,14 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <link rel="shortcut icon" type="image/png" href="<%= asset_path('logo.png') %>">
+    <link rel="shortcut icon" type="image/png" href="<%= asset_path('logo1.png') %>">
+    <%= stylesheet_link_tag "bootstrap", "data-turbo-track": "reload" %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   </head>
 
   <body>
-
-  <nav>
-  <a class="navbar-brand">Photochaton</a>
-  <div>
-    <%= link_to "Page d'accueil", root_path, class: "navbar-brand" %>
-      <span></span>
-    </button>
-    <div>
-      <ul>
-        <% if user_signed_in? %>
-          <li>
-            <button type="button">
-              <%= link_to "Edit email / password", edit_user_registration_path, class: "nav-link" %>
-            </button>
-          </li>
-          <li>
-              <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link" %>
-          </li>
-          <li>
-          <button type="button">
-            <%= link_to "My Cart", cart_path(current_user.cart), class: "nav-link" %>
-          </button>
-        </li>
-        <li>
-        <button type="button">
-          <%= link_to "My Orders", orders_path(user_id: current_user.id), class: "nav-link" %>
-        </button>
-      </li>
-        <% else %>
-          <li>
-            <button type="button">
-              <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
-            </button>
-          </li>
-          <li>
-            <button type="button">
-              <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
-            </button>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
-</nav> 
+  <%= render 'shared/navbar' %>
+  <%= render 'shared/footer' %>
     <%= yield %>
   </body>
 </html>
