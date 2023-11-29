@@ -56,6 +56,7 @@ class CartItemsController < ApplicationController
       format.html { redirect_to cart_items_url, notice: "Cart item was successfully destroyed." }
       format.json { head :no_content }
     end
+    
   end
 
   private
