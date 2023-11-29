@@ -16,6 +16,7 @@ class Order < ApplicationRecord
     cart.cart_items.each do |cart_item|
       order.order_items.create(item: cart_item.item)
     end
+    order.update(total_price: cart.total_price)
     order
   end
 end

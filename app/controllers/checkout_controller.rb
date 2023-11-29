@@ -38,8 +38,19 @@ class CheckoutController < ApplicationController
       def success
         @session = Stripe::Checkout::Session.retrieve(params[:session_id])
         @payment_intent = Stripe::PaymentIntent.retrieve(@session.payment_intent)
+        if @payment_intent.status == 'succeeded'
+          create_order_from_cart
+        else
+          redirect_to root_path, notice: "Payment failed. Please try again."
+        end
       end
 
       def cancel
+      end
+
+      private 
+
+      def create_order_from_cart
+        Order.create_from_cart(current_user.cart)
       end
 end
