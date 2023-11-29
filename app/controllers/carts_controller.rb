@@ -64,7 +64,17 @@ class CartsController < ApplicationController
     redirect_to cart_path(@cart)
   end
 
+  def clear_cart
+    @cart = current_user.cart
 
+    if @cart.cart_items.present?
+      @cart.cart_items.clear
+      @cart.update(total_price: nil)
+      redirect_to cart_path, notice: "Le panier a été vidé avec succès."
+    else
+      redirect_to cart_path, alert: "Le panier est déjà vide."
+    end
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cart
