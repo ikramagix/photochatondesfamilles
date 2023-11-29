@@ -1,5 +1,6 @@
 class Order < ApplicationRecord
   has_many :order_items, dependent: :destroy
+  has_many :items, through: :order_items
   belongs_to :user
 
   before_destroy :destroy_associated_records
@@ -32,5 +33,5 @@ class Order < ApplicationRecord
   def confirmation_order_send
     OrderConfirmationMailer.order_confirmation_mail(self).deliver_now
   end
-  
+
 end
