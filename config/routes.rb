@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   resources :cart_items
   resources :carts
   resources :items
-  resources :orders
+  resources :orders do
+    member do
+      post "process_payment", to: "orders#process_payment", as: :process_payment
+    end
+  end
   devise_for :users
 
   root "items#index"
