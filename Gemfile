@@ -68,6 +68,12 @@ group :test do
   gem "selenium-webdriver"
 end
 
+gem "administrate"
+
+gem 'carrierwave'
+
+gem 'administrate-field-active_storage'
+
 gem "devise"
 
 gem "dotenv-rails"
