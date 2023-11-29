@@ -16,7 +16,7 @@
       <% else %>
         <%= link_to "Log in", new_user_session_path, class: "btn btn-warning navbar-button login" %>
       <% end %>
-      <%= link_to (user_signed_in? ? shopping_cart_path : new_user_session_path), class: "navbar-brand navbar-icon-link" do %>
+      <%= link_to (user_signed_in? ? cart_path(current_user.cart) : new_user_session_path), class: "navbar-brand navbar-icon-link" do %>
       <i class="fas fa-shopping-cart navbar-icon"></i>
       <% end %>
     </div>
