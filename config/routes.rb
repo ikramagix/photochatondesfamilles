@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :orders
   devise_for :users
 
-  resources :cart_items, only: [:destroy]
+  
   post '/add_to_cart/:id', to: 'carts#add_to_cart',
    as: 'add_to_cart'
   root "items#index"

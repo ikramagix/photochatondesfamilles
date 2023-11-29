@@ -48,22 +48,16 @@ class CartItemsController < ApplicationController
     end
   end
 
-  # DELETE /cart_items/1 or /cart_items/1.json
   def destroy
-    @cart_item.destroy!
-
-    respond_to do |format|
-      format.html { redirect_to cart_items_url, notice: "Cart item was successfully destroyed." }
-      format.json { head :no_content }
-    end
-    
+    @cart_item = current_user.cart.cart_items.find(params[:id])
+    @cart_item.destroy
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_cart_item
-      @cart_item = CartItem.find(params[:id])
-    end
+    #def set_cart_item
+    #  @cart_item = CartItem.find(params[:id])
+    #end
 
     # Only allow a list of trusted parameters through.
     def cart_item_params
