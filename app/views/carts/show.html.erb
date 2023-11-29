@@ -19,10 +19,7 @@
             <tr class="table-warning">
               <td><%= item.name %></td>
               <td><%= @cart.cart_items.find_by(item_id: item.id).quantity %></td>
-              <td><%= item.price %></td>
-                    <td>
-                    <%= button_to "Supprimer", cart_item_path(@cart_item), method: :delete, data: { confirm: "Êtes-vous sûr de vouloir supprimer cet article du panier?" }, class: "btn btn-danger" %>
-                    </td>
+              <td><%= item.price %></td>   
             </tr>
           <% end %>
         </tbody>
