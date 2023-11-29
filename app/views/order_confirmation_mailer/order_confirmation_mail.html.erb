@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Salut <%= @user.email %> et bienvenue chez nous !</h1>
+    <p>
+      Tu as passé une commande sur photochaton.fr en utilisant l'e-mail suivant : <%= @user.email %>.
+    </p>
+    <p>
+    Voici la belle photo de chatte que tu as achetée ! :
+    <% if @order.order_items.present? && @order.order_items.last.item.image_url.present? %>
+      <%= image_tag @order.order_items.last.item.image_url, alt: "Chat acheté" %>
+    <% else %>
+      <%= "Aperçu non disponible, contactez le service client" %>
+    <% end %>
+  </p>
+    <p> À très vite sur photochaton.fr ! </p>
+  </body>
+</html>
