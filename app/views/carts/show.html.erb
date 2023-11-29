@@ -37,7 +37,8 @@
         </tbody>
       </table>
       <div>
-        <%= button_to "Vider ce panier", @cart, method: :delete, class: "btn btn-warning" %>
+      <%= button_to "Vider ce panier", clear_cart_cart_path, method: :delete, class: "btn btn-warning", data: { confirm: "Êtes-vous sûr de vouloir vider ce panier?" } %>
+
       </div>
       <div class="button">
       <%= button_to checkout_create_path(total: @cart.total_price), :class=>"btn btn-primary", data: {turbo: false} do %>

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
       root to: "carts#index"
     end
+
   resources :order_items
   resources :cart_items
   resources :carts
@@ -21,9 +22,14 @@ Rails.application.routes.draw do
     get 'cancel', to: 'checkout#cancel', as: 'checkout_cancel'
 end
 
-  #Adding to cart and devise
+  #Adding to cart/Clearing cart and devise
   devise_for :users
 
+  resources :carts do
+    member do
+      delete 'clear_cart', action: :clear_cart, as: 'clear_cart'
+    end
+  end
   
   post '/add_to_cart/:id', to: 'carts#add_to_cart',
    as: 'add_to_cart'
