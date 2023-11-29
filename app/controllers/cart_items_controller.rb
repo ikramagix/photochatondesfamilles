@@ -1,5 +1,5 @@
 class CartItemsController < ApplicationController
-  before_action :set_cart_item, only: %i[ show edit update destroy ]
+  #before_action :set_cart_item, only: %i[ show edit update destroy ]
 
   # GET /cart_items or /cart_items.json
   def index
@@ -37,20 +37,24 @@ class CartItemsController < ApplicationController
   end
   # PATCH/PUT /cart_items/1 or /cart_items/1.json
   def update
-    respond_to do |format|
-      if @cart_item.update(cart_item_params)
-        format.html { redirect_to cart_item_url(@cart_item), notice: "Cart item was successfully updated." }
-        format.json { render :show, status: :ok, location: @cart_item }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @cart_item.errors, status: :unprocessable_entity }
-      end
-    end
+    @cart_item = CartItem.find(params[:id])
+  if params[:increment]
+    @cart_item.quantity += 1
+  elsif params[:decrement]
+    @cart_item.quantity -= 1 if @cart_item.quantity > 1
+  end
+  if @cart_item.save
+    redirect_to cart_path(@cart_item.cart), notice: 'Quantity updated.'
+  else
+    redirect_to cart_path(@cart_item.cart), alert: 'Error updating quantity.'
+  end
   end
 
   def destroy
-    @cart_item = current_user.cart.cart_items.find(params[:id])
+    @cart_item = CartItem.find(params[:id])
     @cart_item.destroy
+
+    redirect_to cart_path(@cart_item.cart), notice: 'Item removed from cart.'
   end
 
   private

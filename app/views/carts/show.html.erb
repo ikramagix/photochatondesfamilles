@@ -15,11 +15,23 @@
           </tr>
         </thead>
         <tbody>
-          <% @cart.items.each do |item| %>
+          <% @cart.cart_items.each do |cart_item| %>
             <tr class="table-warning">
-              <td><%= item.name %></td>
-              <td><%= @cart.cart_items.find_by(item_id: item.id).quantity %></td>
-              <td><%= item.price %></td>   
+              <td><%= cart_item.item.name %></td>
+              <td>
+              <%= form_with(url: cart_item_path(cart_item), method: :patch) do |f| %>  
+                     <%= f.submit '-', name: 'decrement', class: 'decrement-button' %>
+                     <%= f.text_field :quantity, value: cart_item.quantity, min: 1, class: 'quantity-field' %>
+                     <%= f.submit '+', name: 'increment', class: 'increment-button' %>
+              <% end %>
+              </td>
+              <td><%= cart_item.item.price * cart_item.quantity %></td>
+              <td>
+              <%= button_to cart_item_path(cart_item), method: :delete, class: 'delete-button' do %>
+              <i class="fa fa-trash"></i> <!-- Utilisez l'icône de votre choix ici -->
+              <% end %>
+              </td>
+
             </tr>
           <% end %>
         </tbody>
