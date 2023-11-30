@@ -3,14 +3,14 @@
 </div>
 
 <div class="container">
-<h2 class="text-center">Mes commandes</h1>
+  <h2 class="text-center">Mes commandes</h2>
   <% if current_user.orders.any? %>
     <div class="row">
-      <% current_user.orders.each do |order| %>
+      <% current_user.orders.each_with_index do |order, index| %>
         <div class="col-md-4 mb-4">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Commande</h5>
+              <h5 class="card-title">Commande n°<%= index + 1 %></h5>
               <p class="card-text">Total: <%= number_to_currency(order.total_price, unit: '€') %></p>
               <%= link_to "Voir la commande", order_path(order), class: "btn btn-primary" %>
             </div>
@@ -22,6 +22,7 @@
     <p class="text-center">Aucune commande. Visitez notre boutique et faîtes-vous plaisir! </p>
   <% end %>
 </div>
+
 
 
 
@@ -59,16 +60,16 @@
         <%= f.password_field :current_password, class: "form-control", autocomplete: "current-password" %>
       </div>
 
-      <div class="actions text-center">
-        <%= f.submit "Enregistrer vos modifications", class: "btn btn-primary" %>
-      </div>
+     <div class="actions text-center d-flex justify-content-between">
+  <%= f.submit "Enregistrer vos modifications", class: "btn btn-primary" %>
+  <div class="mb-3"><%= link_to "Retour à la page d'accueil", :back, class: "mt-4 btn btn-secondary" %></div>
+</div>
     <% end %>
 
     <h3 class="mt-4">Fermer mon compte</h3>
-
     <div class="mb-3">Pas content? Vous préférez les chiens? <%= button_to "Clôturer mon compte", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></div>
 
-    <%= link_to "Retour à la page d'accueil", :back, class: "mt-4 btn btn-secondary" %>
+    <%= link_to "J'essaie d'escape le footer qui me cache, je suis un bouton inutile"%>
     </div>
   </div>
 </div>
