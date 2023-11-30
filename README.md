@@ -64,7 +64,7 @@ L'application utilise une base de données PostgreSQL avec les tables suivantes 
   <img src="app/assets/images/full_db_photochaton.png" alt="La db" width="100%"/>
 </p>
 
-<p align="center">
+<p align="center">Chat buggggg des fois... Chat marche parfouuuuuaaaaaa...
   <img src="app/assets/images/chat4-removebg-preview.png" alt="Un chat pour la databse" width="250"/>
 </p>
 
