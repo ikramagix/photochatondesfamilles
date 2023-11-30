@@ -46,7 +46,7 @@
         <%= f.label :nouveau_mot_de_passe %> <i>(laissez ce champ vide si vous ne souhaitez pas changer votre mot de passe)</i>
         <%= f.password_field :password, class: "form-control", autocomplete: "new-password" %>
         <% if @minimum_password_length %>
-          <small><%= @minimum_password_length %> characters minimum</small>
+          <small><%= @minimum_password_length %> caractères minimum</small>
         <% end %>
       </div>
 
