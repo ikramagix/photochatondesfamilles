@@ -89,7 +89,7 @@ order = Order.create_from_cart(cart)
 tp Item.all
 ```
 
-# Ca marche pas ? Ca bug ?
+# Ca marche pas ? Ca bug ? Ne vous inquiétez pas...
 
 <p align="center">
   <img src="app/assets/images/sylvain-sylvain-durif.gif" alt="Hallucination" width="500"/>
