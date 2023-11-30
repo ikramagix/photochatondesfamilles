@@ -102,6 +102,6 @@ Juste... ici : https://photochaton-2d43e208c0f8.herokuapp.com/
 # BONUS : La maquette Figma by 100PBaguuette (Grégory Magnat)
 
 <p align="center">
-  <img src="app/assets/images/full_maket.png" alt="Maquette" width="500"/>
+  <img src="app/assets/images/full_maket.png" alt="Maquette" width="1000"/>
 </p>
 
