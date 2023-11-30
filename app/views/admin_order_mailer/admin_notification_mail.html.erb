@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Salut <%= @admin.email %> !</h1>
+    <p>
+      Une nouvelle commande a été passée sur le site.
+    </p>
+    <p>
+      ID de la commande : <%= @order.id %>
+    </p>
+    <p>
+      Date et heure de la commande : <%= @order.created_at.strftime('%Y-%m-%d %H:%M:%S') %>
+    </p>
+    <p> À très vite sur le site ! </p>
+  </body>
+</html>

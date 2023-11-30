@@ -6,6 +6,7 @@ class Order < ApplicationRecord
   before_destroy :destroy_associated_records
   after_create :clear_cart_after_order
   after_create :confirmation_order_send
+  after_create :notify_admins
 
   private
 
@@ -34,4 +35,10 @@ class Order < ApplicationRecord
     OrderConfirmationMailer.order_confirmation_mail(self).deliver_now
   end
 
+  def notify_admins
+    admins = User.where(admin: true)
+    admins.each do |admin|
+      AdminOrderMailer.admin_notification_mail(self, admin).deliver_now
+    end
+  end
 end
