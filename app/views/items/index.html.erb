@@ -10,12 +10,9 @@
         <div class="card-body">
           <h5 class="card-title"><%= item.name %></h5>
           <p class="card-text"><%= item.description %></p>
-          <p class="card-text"><%= number_to_currency(item.price) %></p>
+          <p class="card-text"><%= number_to_currency(item.price, unit: '€') %></p>
           <div class="d-flex justify-content-between">
             <%= link_to 'Voir', item, class: 'btn btn-warning' %>
-            <% if user_signed_in? %>
-              <%= button_to 'Panier', cart_items_path(item_id: item.id), method: :post, class: 'btn btn-secondary' %>
-            <% end %>
           </div>
         </div>
       </div>
