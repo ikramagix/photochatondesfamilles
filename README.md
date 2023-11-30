@@ -1,7 +1,7 @@
 # PHOTOchaton
 
 <p align="center">Bienvenue sur PHOTOchaton, la meilleure boutique en ligne pour acheter des photos de chats et chattes 100% SFW.</p>
-<p align="center"><img src="app/assets/images/angels.png" alt="Les devs, ces anges!" width="150"/></p>
+<p align="center"><img src="app/assets/images/angels.png" alt="Les devs, ces anges!" width="400"/></p>
 
 ## Chat parle de quoi ?
 
@@ -95,7 +95,7 @@ tp Item.all
   <img src="app/assets/images/sylvain-sylvain-durif.gif" alt="Hallucination" width="500"/>
 </p>
 
-#### La version en ligne pour les plus vaillants, vous l'avez mérité si vous avez scrollé jusqu'ici
+## La version en ligne pour les plus vaillants, vous l'avez mérité si vous avez scrollé jusqu'ici
 
 Juste... ici : https://photochaton-2d43e208c0f8.herokuapp.com/
 
