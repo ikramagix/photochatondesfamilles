@@ -19,5 +19,8 @@
       <%= link_to (user_signed_in? ? cart_path(current_user.cart) : new_user_session_path), class: "navbar-brand navbar-icon-link" do %>
       <i class="fas fa-shopping-cart navbar-icon"></i>
       <% end %>
+      <%= link_to (user_signed_in? ? edit_user_registration_path(current_user) : new_user_session_path), class: "navbar-brand navbar-icon-link" do %>
+      <i class="fas fa-solid fa-user navbar-icon"></i>      
+      <% end %>
     </div>
 </nav>
