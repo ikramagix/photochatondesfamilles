@@ -1,17 +1,12 @@
 # PHOTOchaton
 
-<div align="center">
-  <p>Bienvenue sur PHOTOchaton, la meilleure boutique en ligne pour acheter des photos de chats et chattes 100% SFW.</p>
-  <img src="app/assets/images/angels.png" alt="Les devs, ces anges!" width="150"/>
-</div>
-
+<p align="center">Bienvenue sur PHOTOchaton, la meilleure boutique en ligne pour acheter des photos de chats et chattes 100% SFW.</p>
+<p align="center"><img src="app/assets/images/angels.png" alt="Les devs, ces anges!" width="150"/></p>
 
 ## Chat parle de quoi ?
 
-<div align="center">
-  <p>PHOTOchaton est une application web permettant aux utilisateurs de parcourir une collection de photos de chatons et d'acheter leurs préférées en quelques clics.</p>
-  <img src="app/assets/images/sylvaindurifflute.png" alt="Sysy width="500"/>
-</div>
+<p align="center">PHOTOchaton est une application web permettant aux utilisateurs de parcourir une collection de photos de chatons et d'acheter leurs préférées en quelques clics.</p>
+<p align="center"><img src="app/assets/images/sylvaindurifflute.png" alt="Sysy" width="500"/></p>
 
 > Après des recherches approfondies, notre étude de marché révolutionnaire a révélé que la ménagère typique de moins de 50 ans est désespérément fatiguée de se faire arnaquer par le téléachat avec des produits inutiles.  
 
@@ -23,13 +18,10 @@
 
 > PHOTOchaton : comblant le vide émotionnel, une photo de chaton à la fois.
 
-
 ## Et techniquement, chat utilise quoi ?
 
-<div align="center">
- <p>L'application est construite avec Ruby on Rails, utilise PostgreSQL comme base de données, et intègre des fonctionnalités telles que le paiement en ligne via Stripe, la gestion d'images avec CarrierWave, et bien plus encore.</p>
-  <img src="app/assets/images/sylvainduriffassis.png" alt="Sysy width="500"/>
-</div>
+<p align="center">L'application est construite avec Ruby on Rails, utilise PostgreSQL comme base de données, et intègre des fonctionnalités telles que le paiement en ligne via Stripe, la gestion d'images avec CarrierWave, et bien plus encore.</p>
+<p align="center"><img src="app/assets/images/sylvainduriffassis.png" alt="Sysy" width="500"/></p>
 
 - **Parcourir les Photos :** Les utilisateurs peuvent explorer une variété de photos de chatons disponibles à l'achat.
 - **Achat Facile :** Un processus d'achat simple permet aux utilisateurs d'ajouter des photos à leur panier et de finaliser leur commande en toute sécurité.
@@ -48,7 +40,7 @@
    STRIPE_SECRET_KEY=your_secret_key
    ```
 
-## Structure de la base de données 
+## Structure de la base de données
 
 L'application utilise une base de données PostgreSQL avec les tables suivantes :
 
@@ -59,7 +51,7 @@ L'application utilise une base de données PostgreSQL avec les tables suivantes 
 - **orders** : Stocke les informations des commandes.
 - **order_items** : Associe les articles aux commandes.
 
-## Fonctionnement de la base de données 
+## Fonctionnement de la base de données
 
 - **Utilisateurs :** Les utilisateurs sont enregistrés avec une adresse e-mail et un mot de passe.
 - **Articles :** Les articles ont un nom, une description, un prix et une image ou bien une URL d'image.
@@ -68,14 +60,13 @@ L'application utilise une base de données PostgreSQL avec les tables suivantes 
 
 ## Chat ressemble à quoi cette base de données ?
 
-<div align="center">
-  <img src="app/assets/images/full_db_photochaton.png" alt="La db width="800vh"/>
-</div>
+<p align="center">
+  <img src="app/assets/images/full_db_photochaton.png" alt="La db" width="800vh"/>
+</p>
 
-<div align="center">
+<p align="center">
   <img src="app/assets/images/chat4-removebg-preview.png" alt="Un chat pour la databse" width="250"/>
-</div>
-
+</p>
 
 ## Amusez-vous avec chat en console
 
@@ -100,10 +91,11 @@ tp Item.all
 
 # Ca marche pas ? Ca bug ?
 
-<div align="center">
+<p align="center">
   <img src="app/assets/images/sylvain-sylvain-durif.gif" alt="Hallucination" width="500"/>
-</div>
+</p>
 
-#### La version en ligne pour les plus curieux, vous l'avez mérité si vous avez scrollé jusqu'ici
+#### La version en ligne pour les plus vaillants, vous l'avez mérité si vous avez scrollé jusqu'ici
 
-https://photochaton-2d43e208c0f8.herokuapp.com/
+Juste... ici : https://photochaton-2d43e208c0f8.herokuapp.com/
+
