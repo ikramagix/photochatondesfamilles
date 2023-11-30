@@ -2,7 +2,7 @@
 
 <%= image_tag("cardImage (2).png", class: "img-fluid centered-and-large") %>
 
-<div class="row mt-3">
+<div class="row m-5">
   <% @items.each do |item| %>
     <div class="col-md-4 mb-3">
       <div class="card h-100">
@@ -12,7 +12,7 @@
           <p class="card-text"><%= item.description %></p>
           <p class="card-text"><%= number_to_currency(item.price) %></p>
           <div class="d-flex justify-content-between">
-            <%= link_to 'Voir', item, class: 'btn btn-primary' %>
+            <%= link_to 'Voir', item, class: 'btn btn-warning' %>
             <% if user_signed_in? %>
               <%= button_to 'Panier', cart_items_path(item_id: item.id), method: :post, class: 'btn btn-secondary' %>
             <% end %>

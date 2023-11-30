@@ -20,28 +20,27 @@
               <td><%= cart_item.item.name %></td>
               <td>
               <%= form_with(url: cart_item_path(cart_item), method: :patch) do |f| %>  
-                     <%= f.submit '-', name: 'decrement', class: 'decrement-button' %>
-                     <%= f.text_field :quantity, value: cart_item.quantity, min: 1, class: 'quantity-field' %>
-                     <%= f.submit '+', name: 'increment', class: 'increment-button' %>
+                <%= f.submit '-', name: 'decrement', class: 'decrement-button' %>
+                <%= f.text_field :quantity, value: cart_item.quantity, min: 1, class: 'quantity-field' %>
+                <%= f.submit '+', name: 'increment', class: 'increment-button' %>
               <% end %>
               </td>
-              <td><%= cart_item.item.price * cart_item.quantity %></td>
+              <td><%= cart_item.item.price * cart_item.quantity %>€</td>
               <td>
-              <%= button_to cart_item_path(cart_item), method: :delete, class: 'delete-button' do %>
-              <i class="fa fa-trash"></i> <!-- Utilisez l'icône de votre choix ici -->
-              <% end %>
+                <%= button_to cart_item_path(cart_item), method: :delete, class: 'delete-button btn-danger' do %>
+                  <i class="fa-solid fa-trash" style="color: #ffffff;"></i>
+                <% end %>
               </td>
-
             </tr>
           <% end %>
         </tbody>
       </table>
       <div>
-      <%= button_to "Vider ce panier", clear_cart_cart_path, method: :delete, class: "btn btn-warning", data: { confirm: "Êtes-vous sûr de vouloir vider ce panier?" } %>
+      <%= button_to "Vider ce panier", clear_cart_cart_path, method: :delete, class: "btn btn-danger", data: { confirm: "Êtes-vous sûr de vouloir vider ce panier?" } %>
 
       </div>
-      <div class="button">
-      <%= button_to checkout_create_path(total: @cart.total_price), :class=>"btn btn-primary", data: {turbo: false} do %>
+      <div class="button p-3">
+      <%= button_to checkout_create_path(total: @cart.total_price), :class=>"btn btn-warning", data: {turbo: false} do %>
         <i class="fa-solid fa-money-bill"></i>
         Passer à la commande
       <% end %>
