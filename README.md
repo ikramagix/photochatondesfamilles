@@ -61,7 +61,7 @@ L'application utilise une base de données PostgreSQL avec les tables suivantes 
 ## Chat ressemble à quoi cette base de données ?
 
 <p align="center">
-  <img src="app/assets/images/full_db_photochaton.png" alt="La db" width="800vh"/>
+  <img src="app/assets/images/full_db_photochaton.png" alt="La db" width="100vh"/>
 </p>
 
 <p align="center">
