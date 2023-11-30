@@ -2,7 +2,7 @@
 
 <div align="center">
   <p>Bienvenue sur PHOTOchaton, la meilleure boutique en ligne pour acheter des photos de chats et chattes 100% SFW.</p>
-  <img src="app/assets/images/angels.png" alt="Les devs, ces anges!" width="50"/>
+  <img src="app/assets/images/angels.png" alt="Les devs, ces anges!" width="150"/>
 </div>
 
 
@@ -98,8 +98,12 @@ order = Order.create_from_cart(cart)
 tp Item.all
 ```
 
-# Ca marche pas ? Ca bug ? Vous avez un soucis et vous n'avez pas reçu votre commande de photo numérique de chaton ?
+# Ca marche pas ? Ca bug ?
 
 <div align="center">
-  <img src="app/assets/images/sylvain-sylvain-duriff.gif" alt="Hallucination" width="500"/>
+  <img src="app/assets/images/sylvain-sylvain-durif.gif" alt="Hallucination" width="500"/>
 </div>
+
+#### La version en ligne pour les plus curieux, vous l'avez mérité si vous avez scrollé jusqu'ici
+
+https://photochaton-2d43e208c0f8.herokuapp.com/
