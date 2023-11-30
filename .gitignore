@@ -39,6 +39,7 @@
 
 /node_modules
 
+# Ignorer les dossiers d'images d'items
 /public/uploads/item/image/51/
 /public/uploads/item/image/52/
 /public/uploads/item/image/53/
