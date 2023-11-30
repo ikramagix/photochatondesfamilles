@@ -1,12 +1,35 @@
-<div id="<%= dom_id order %>">
-  <p>
-    <strong>Total price:</strong>
-    <%= order.total_price %>
-  </p>
+<div id="<%= dom_id order %>" class="container mt-5">
+  <h1 class="text-center mb-4">Récapitulatif de la commande sélectionnée :</h1>
 
-  <p>
-    <strong>User:</strong>
-    <%= order.user_id %>
-  </p>
+  <% if order.order_items.any? %>
+    <h4 class="text-center text-light bg-warning mb-3">Photos achetées dans cette commande :</h4>
+    <ul class="list-group">
+      <% order.order_items.each do |order_item| %>
+        <li class="list-group-item">
+          <% item = Item.find_by(id: order_item.item_id) %>
+          <% if item.present? %>
+            <p><strong class="text-warning">Nom du produit :</strong> <%= item.name %></p>
+            <p><strong class="text-warning">Description du produit :</strong> <%= item.description.present? ? item.description : 'Information non disponible' %></p>
+            <p><strong class="text-warning">Prix :</strong> <%= item.price.present? ? number_to_currency(item.price, unit: '€') : 'Information non disponible' %></p>
+            <p><strong class="text-warning">URL de téléchargement de l'image :</strong> <%= item.image_url.present? ? item.image_url : 'Information non disponible' %></p>
+            <p><strong class="text-warning">Aperçu de l'image achetée :</strong>
+              <% if item.image.present? %>
+                <%= image_tag item.image.url, class: "img-fluid" %>
+              <% else %>
+                Information non disponible
+              <% end %>
+            </p>
+          <% else %>
+            <p>Information non disponible</p>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p class="text-center mt-3">Information non disponible</p>
+  <% end %>
 
+  <div class="text-center mt-4 bg-warning">
+  <h4 class="text-light"> Prix total de la commande : <%= number_to_currency(order.total_price, unit: '€') %></h4>
+</div>
 </div>
