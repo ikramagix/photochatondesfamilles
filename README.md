@@ -1,14 +1,17 @@
 # PHOTOchaton
 
 <div align="center">
-  <img src="app/assets/images/angels.png" alt="Bienvenue sur PHOTOchaton" width="500"/>
-  <p>Bienvenue sur PHOTOchaton, la meilleure boutique en ligne pour acheter des photos de chatons tout mignons... ou pas!</p>
+  <p>Bienvenue sur PHOTOchaton, la meilleure boutique en ligne pour acheter des photos de chats et chattes 100% SFW.</p>
+  <img src="app/assets/images/angels.png" alt="Les devs, ces anges!" width="50"/>
 </div>
 
 
 ## Chat parle de quoi ?
 
-PHOTOchaton est une application web permettant aux utilisateurs de parcourir une collection de photos de chatons et d'acheter leurs préférées en quelques clics.
+<div align="center">
+  <p>PHOTOchaton est une application web permettant aux utilisateurs de parcourir une collection de photos de chatons et d'acheter leurs préférées en quelques clics.</p>
+  <img src="app/assets/images/sylvaindurifflute.png" alt="Sysy width="500"/>
+</div>
 
 > Après des recherches approfondies, notre étude de marché révolutionnaire a révélé que la ménagère typique de moins de 50 ans est désespérément fatiguée de se faire arnaquer par le téléachat avec des produits inutiles.  
 
@@ -23,8 +26,10 @@ PHOTOchaton est une application web permettant aux utilisateurs de parcourir une
 
 ## Et techniquement, chat utilise quoi ?
 
-L'application est construite avec Ruby on Rails, utilise PostgreSQL comme base de données, et intègre des fonctionnalités telles que le paiement en ligne via Stripe, la gestion d'images avec CarrierWave, et bien plus encore.
-
+<div align="center">
+ <p>L'application est construite avec Ruby on Rails, utilise PostgreSQL comme base de données, et intègre des fonctionnalités telles que le paiement en ligne via Stripe, la gestion d'images avec CarrierWave, et bien plus encore.</p>
+  <img src="app/assets/images/sylvainduriffassis.png" alt="Sysy width="500"/>
+</div>
 
 - **Parcourir les Photos :** Les utilisateurs peuvent explorer une variété de photos de chatons disponibles à l'achat.
 - **Achat Facile :** Un processus d'achat simple permet aux utilisateurs d'ajouter des photos à leur panier et de finaliser leur commande en toute sécurité.
@@ -63,6 +68,13 @@ L'application utilise une base de données PostgreSQL avec les tables suivantes 
 
 ## Chat ressemble à quoi cette base de données ?
 
+<div align="center">
+  <img src="app/assets/images/full_db_photochaton.png" alt="La db width="800vh"/>
+</div>
+
+<div align="center">
+  <img src="app/assets/images/chat4-removebg-preview.png" alt="Un chat pour la databse" width="250"/>
+</div>
 
 
 ## Amusez-vous avec chat en console
@@ -85,3 +97,9 @@ order = Order.create_from_cart(cart)
 ```ruby 
 tp Item.all
 ```
+
+# Ca marche pas ? Ca bug ? Vous avez un soucis et vous n'avez pas reçu votre commande de photo numérique de chaton ?
+
+<div align="center">
+  <img src="app/assets/images/sylvain-sylvain-duriff.gif" alt="Hallucination" width="500"/>
+</div>
