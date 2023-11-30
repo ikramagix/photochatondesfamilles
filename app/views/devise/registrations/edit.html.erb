@@ -1,43 +1,82 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container">
+  <h1 class="text-center">Mon profil de PHOTOchateur</h1>
+</div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+<div class="container">
+  <h2 class="text-center">Mes commandes</h2>
+  <% if current_user.orders.any? %>
+    <div class="row">
+      <% current_user.orders.each_with_index do |order, index| %>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Commande n°<%= index + 1 %></h5>
+              <p class="card-text">Total: <%= number_to_currency(order.total_price, unit: '€') %></p>
+              <%= link_to "Voir la commande", order_path(order), class: "btn btn-primary" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p class="text-center">Aucune commande. Visitez notre boutique et faîtes-vous plaisir ! </p>
   <% end %>
+</div>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <h2 class="text-center mb-4">Mettre à jour mon profil</h2>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="form-group mb-3">
+        <%= f.label :adresse_email_du_compte %>
+        <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div class="mb-3">Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+      <div class="form-group mb-3">
+        <%= f.label :nouveau_mot_de_passe %> <i>(laissez ce champ vide si vous ne souhaitez pas changer votre mot de passe)</i>
+        <%= f.password_field :password, class: "form-control", autocomplete: "new-password" %>
+        <% if @minimum_password_length %>
+          <small><%= @minimum_password_length %> caractères minimum</small>
+        <% end %>
+      </div>
+
+      <div class="form-group mb-3">
+        <%= f.label :confirmez_votre_nouveau_mot_de_passe %>
+        <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "new-password" %>
+      </div>
+
+      <div class="form-group mb-3">
+        <%= f.label :mot_de_passe_actuel %> <i>(nous en avons besoin pour enregistrer vos modifications)</i>
+        <%= f.password_field :current_password, class: "form-control", autocomplete: "current-password" %>
+      </div>
+
+     <div class="actions text-center d-flex justify-content-between">
+  <%= f.submit "Enregistrer vos modifications", class: "btn btn-primary" %>
+  <div class="mb-3"><%= link_to "Retour à la page d'accueil", :back, class: "mt-4 btn btn-secondary" %></div>
+</div>
     <% end %>
+
+    <div class="mb-5">
+    <h3 class="mt-4">Fermer mon compte</h3>
+    <div class="mb-6">Pas content? Vous préférez les chiens? <%= button_to "Clôturer mon compte", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></div>
+    </div>
+    <div class="mb-5">
+    <h3 class="mt-4"></h3>
+    <div class="mb-6"><p>
+    Ah, vous voulez vraiment vous débarrasser de toutes ces merveilleuses photos de chats que vous n'avez soigneusement pas pu téléchargé ? C'est une décision audacieuse! Si vous fermez votre compte, vos chefs-d'œuvre félins seront perdus dans les tréfonds de l'oubli, pour l'éternité. Mais qui a besoin de souvenirs de chatons mignons de toute façon? N'oubliez pas, vous avez une incroyable période de 14 jours pour changer d'avis chez PHOTOchaton! Pendant ce temps, vous pourrez continuer à rêver des jours où vos photos de chats régnaient en maîtres. Après cela, c'est le point de non-retour. C'est normal que vous ne voyiez pas le texte en entier. C'est parce que vous voulez nous quitter. Amusez-vous bien! Moi, j'essaie juste d'échapper au footer pour m'afficher correctement.
+  </p>
+  
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+  
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
-
-<%= link_to "Back", :back %>
+</div>

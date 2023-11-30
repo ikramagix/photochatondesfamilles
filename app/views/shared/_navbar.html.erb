@@ -18,10 +18,13 @@
       <% if user_signed_in? %>
         <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "btn btn-danger navbar-button logout" %>
       <% else %>
-        <%= link_to "Connecte-toi", new_user_session_path, class: "btn btn-success navbar-button login" %>
+        <%= link_to "Connexion", new_user_session_path, class: "btn btn-success navbar-button login" %>
       <% end %>
-      <%= link_to (user_signed_in? ? cart_path(current_user.cart) : new_user_session_path), class: "navbar-brand navbar-icon-link px-3" do %>
+      <%= link_to (user_signed_in? ? cart_path(current_user) : new_user_session_path), class: "navbar-brand navbar-icon-link px-3" do %>
         <i class="fas fa-shopping-cart navbar-icon"></i>
+      <% end %>
+      <%= link_to (user_signed_in? ? edit_user_registration_path(current_user) : new_user_session_path), class: "navbar-brand navbar-icon-link" do %>
+      <i class="fas fa-solid fa-user navbar-icon"></i>      
       <% end %>
     </div>
 </nav>
