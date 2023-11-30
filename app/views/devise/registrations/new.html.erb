@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container pt-5">
   <div class="row justify-content-center">
     <div class="col-md-6">
       <div class="card">
         <div class="card-header">
-          <h2 class="mb-0">Sign up</h2>
+          <h2 class="mb-0 text-center">Créer un compte</h2>
         </div>
         <div class="card-body">
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -13,21 +13,22 @@
             </div>
 
             <div class="form-group">
-              <%= f.label :password %>
+              <%= f.label :password, "Mot de passe" %>
               <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
             </div>
 
             <div class="form-group">
-              <%= f.label :password_confirmation %>
+              <%= f.label :password_confirmation, "Confirmation de mot de passe" %>
               <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
             </div>
 
-            <div class="form-group">
-              <%= f.submit "Sign up", class: "btn btn-primary" %>
+            <div class="form-group pt-3 text-center">
+              <%= f.submit "S'inscrire", class: "btn btn-warning" %>
             </div>
           <% end %>
-
-          <%= render "devise/shared/links" %>
+          <div class="text-center pt-2">  
+            <%= render "devise/shared/links" %>
+          </div>
         </div>
       </div>
     </div>

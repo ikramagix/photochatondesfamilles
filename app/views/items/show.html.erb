@@ -1,29 +1,41 @@
 
 <div class="d-flex flex-column justify-content-center align-items-center vh-100">
   <div class="text-center">
-    <p>
-      <strong>Name:</strong>
+    <h3>
+      <strong>Nom :</strong>
       <%= @item.name %>
-    </p>
+    </h3>
 
-    <p>
-      <strong>Description:</strong>
+    <h6>
+      <strong>Description :</strong>
       <%= @item.description %>
-    </p>
+    </h6>
+
+    <h5>
+      <strong>Prix :
+        <%= @item.price%>
+        €
+      </strong>
+    </h5>
 
     <p>
-      <strong>Price:</strong>
-      <%= @item.price %>
-    </p>
-
-    <p>
-      <strong>Image:</strong>
+      <strong>Image :</strong>
       <%= image_tag @item.image_url if @item.image_url.present? %>
     </p>
 
-    <%= form_with url: add_to_cart_path(@item), method: :post do |form| %>
-      <%= form.number_field :quantity, value: 1, min: 1, class: "form-control" %>
-      <%= form.submit "Ajouter au panier", class: "btn btn-warning mt-3" %>
+    <% if current_user %>
+      <%= form_with url: add_to_cart_path(@item), method: :post do |form| %>
+        <%= form.number_field :quantity, value: 1, min: 1, class: "form-control" %>
+        <%= form.submit "Ajouter au panier", class: "btn btn-warning mt-3" %>
+      <% end %>
+    <% else %>
+      <%= form_with url: new_user_session_path do |form| %>
+        <label for="quantity" class="pb-2">
+          <strong>Quantité :</strong>
+        </label>
+        <%= form.number_field :quantity, value: 1, min: 1, class: "form-control" %>
+        <%= form.submit "Se connecter pour ajouter au panier", class: "btn btn-warning mt-3" %>
+      <% end %>
     <% end %>
   </div>
 </div>
