@@ -1,7 +1,6 @@
 # PHOTOchaton
 
 <p align="center">Bienvenue sur PHOTOchaton, la meilleure boutique en ligne pour acheter des photos de chats et chattes 100% SFW.</p>
-<p align="center"><img src="app/assets/images/angels.png" alt="Les devs, ces anges!" width="400"/></p>
 
 ## Chat parle de quoi ?
 
